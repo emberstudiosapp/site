@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="YOUR_CODE_HERE" />
+    <title>Embers Studios - Indie Software Studio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'VT323', monospace;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Pixel art stars background */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+                radial-gradient(2px 2px at 60px 70px, #fff, transparent),
+                radial-gradient(1px 1px at 50px 50px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+                radial-gradient(2px 2px at 90px 10px, #fff, transparent);
+            background-size: 200px 200px;
+            animation: twinkle 3s ease-in-out infinite;
+            opacity: 0.5;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+        
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            border: 4px solid #fff;
+            border-radius: 0;
+            padding: 40px;
+            max-width: 700px;
+            box-shadow: 
+                0 0 0 4px #000,
+                0 0 0 8px #fff,
+                0 0 40px rgba(255, 255, 255, 0.3),
+                inset 0 0 40px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 
+                3px 3px 0 #ff6b6b,
+                6px 6px 0 #4ecdc4;
+            animation: glitch 5s infinite;
+            letter-spacing: 2px;
+        }
+        
+        @keyframes glitch {
+            0%, 96%, 100% {
+                text-shadow: 
+                    3px 3px 0 #ff6b6b,
+                    6px 6px 0 #4ecdc4;
+            }
+            97% {
+                text-shadow: 
+                    -3px -3px 0 #ff6b6b,
+                    -6px -6px 0 #4ecdc4;
+            }
+            98% {
+                text-shadow: 
+                    3px -3px 0 #ff6b6b,
+                    6px 6px 0 #4ecdc4;
+            }
+        }
+        
+        .tagline {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #4ecdc4;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .flame {
+            display: inline-block;
+            animation: flicker 1.5s infinite;
+        }
+        
+        @keyframes flicker {
+            0%, 100% { color: #ff6b6b; }
+            50% { color: #ffd93d; }
+        }
+        
+        .content {
+            font-size: 22px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .content p {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .content p::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #ff6b6b;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+        
+        .apps {
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px dashed #4ecdc4;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .apps h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #ffd93d;
+        }
+        
+        .app-item {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+        
+        .app-item::before {
+            content: '🔥 ';
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #4ecdc4;
+            color: #4ecdc4;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: #fff;
+            padding: 15px 30px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            text-decoration: none;
+            border: 4px solid #fff;
+            margin: 10px 5px;
+            transition: all 0.1s;
+            box-shadow: 4px 4px 0 #000;
+        }
+        
+        .button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #000;
+        }
+        
+        .pixel-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ffd93d;
+        }
+        
+        .pixel-corner.top-left {
+            top: -2px;
+            left: -2px;
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+        }
+        
+        .pixel-corner.top-right {
+            top: -2px;
+            right: -2px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+        
+        .pixel-corner.bottom-left {
+            bottom: -2px;
+            left: -2px;
+            clip-path: polygon(0 0, 0 100%, 100% 100%);
+        }
+        
+        .pixel-corner.bottom-right {
+            bottom: -2px;
+            right: -2px;
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 20px;
+            }
+            .tagline {
+                font-size: 18px;
+            }
+            .content {
+                font-size: 18px;
+            }
+            .container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pixel-corner top-left"></div>
+        <div class="pixel-corner top-right"></div>
+        <div class="pixel-corner bottom-left"></div>
+        <div class="pixel-corner bottom-right"></div>
+        
+        <h1 class="logo">
+            <span class="flame">🔥</span> EMBERS STUDIOS <span class="flame">🔥</span>
+        </h1>
+        <p class="tagline">Indie Software Studio</p>
+        
+        <div class="content">
+            <p>We build productivity tools that don't suck.</p>
+            <p>We make apps that improve your life.</p>
+        </div>
+        
+        <div class="apps">
+            <h2>▸ OUR APPS</h2>
+            <div class="app-item">BrainDump - ADHD productivity app with AI</div>
+            <div class="app-item">More coming soon...</div>
+        </div>
+        
+        <div class="footer">
+            <p>CONTACT US 🎮</p>
+            <p style="margin-top: 15px; font-size: 18px;">
+                Contact: emberstudios.app@gmail.com
+            </p>
+        </div>
+    </div>
+</body>
+</html>
